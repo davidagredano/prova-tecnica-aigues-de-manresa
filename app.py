@@ -6,6 +6,11 @@ app = Flask(__name__)
 mqtt_client.init()
 
 
+@app.route("/api/db")
+def db_data():
+    pass  # TODO: Implement database query and return data as JSON
+
+
 @app.route("/api/mqtt")
 def mqtt_data():
     return jsonify({"value": mqtt_client.get_last_message()})
